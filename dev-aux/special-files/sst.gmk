@@ -1,0 +1,33 @@
+#
+# For the copyright information for this file, please search up the
+# directory tree for the first README.md file.
+#
+
+gitlab_projects += sst
+
+sst_server_url = https://gitlab.stealthsoftwareinc.com
+sst_project_id = 2
+
+sst_api_token = $(stealth_gitlab_api_token)
+
+ifndef stealth_gitlab_api_token
+$(eval $(call read_variable,stealth_gitlab_api_token,s))
+endif
+
+sst_downloads = \
+  dev-aux/special-files.gmk \
+  src/bash/functions/array/array_contains.bash \
+  src/bash/functions/barf.bash \
+  src/bash/functions/expect_argument_count.bash \
+  src/bash/functions/expect_c_identifier.bash \
+  src/bash/functions/expect_safe_path.bash \
+  src/bash/functions/path/path_get_prefix.bash \
+  src/bash/functions/protect_path.bash \
+  src/bash/functions/trap_append.bash \
+  src/bash/functions/ubuntu/ubuntu_install_packages.bash \
+  src/bash/functions/warn.bash \
+  src/bash/preludes/gitlab-ci.bash \
+  src/bash/preludes/standard.bash \
+  src/bash/scripts/gitlab-ci/wiki \
+  src/gitlab-ci/preludes/standard.yml \
+$(prevent_an_empty_line)

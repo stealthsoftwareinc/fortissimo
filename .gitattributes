@@ -1,0 +1,26 @@
+#
+# For the copyright information for this file, please search up the
+# directory tree for the first COPYING file.
+#
+
+#
+# Disable end-of-line normalization by default.
+#
+
+* -text
+
+#
+# Enable end-of-line normalization for various file extensions.
+#
+
+*.bash text eol=lf
+*.clang-format text eol=lf
+*.clang-tidy text eol=lf
+*.cpp text eol=lf
+*.csv text eol=lf
+*.gitignore text eol=lf
+*.gmk text eol=lf
+*.h text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.yml text eol=lf

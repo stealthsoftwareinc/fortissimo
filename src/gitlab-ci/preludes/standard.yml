@@ -1,0 +1,37 @@
+#
+# For the copyright information for this file, please search up the
+# directory tree for the first COPYING file.
+#
+
+#
+#
+
+.builder-images:
+  - &builder-images-ubuntu-18-04 registry.stealthsoftwareinc.com/stealth/builder-images/ubuntu:18.04
+
+#
+#
+
+default:
+  image: *builder-images-ubuntu-18-04
+  tags: [shared]
+
+stages: [stage-1,  stage-2,  stage-3,  stage-4,  stage-5,
+         stage-6,  stage-7,  stage-8,  stage-9,  stage-10,
+         stage-11, stage-12, stage-13, stage-14, stage-15,
+         stage-16, stage-17, stage-18, stage-19, stage-20]
+
+workflow:
+  # Automatically run pipelines only for branch master, version tags,
+  # and merge requests. This does not restrict what kind of pipelines
+  # can be run by other means.
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
+    - if: $CI_COMMIT_TAG =~ /^v/
+    - if: $CI_MERGE_REQUEST_ID
+
+variables:
+  # Default to doing a full clone, which is the safest strategy. Other
+  # strategies can be used on a case-by-case basis.
+  GIT_STRATEGY: clone
+  GIT_DEPTH: 0

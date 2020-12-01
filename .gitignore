@@ -1,0 +1,9 @@
+**/target/
+*.swp
+*.swo
+**/cmake-build-debug/
+**/cmake-build-release/
+**/.idea
+*.dia~
+*.dia.autosave
+a.out

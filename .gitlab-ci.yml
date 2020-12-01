@@ -1,0 +1,31 @@
+#
+# For the copyright information for this file, please search up the
+# directory tree for the first COPYING file.
+#
+
+include:
+  - local: /src/gitlab-ci/preludes/standard.yml
+
+wiki:
+  script: [src/bash/scripts/gitlab-ci/wiki]
+  stage: stage-1
+
+format:
+  stage: stage-1
+  image: registry.stealthsoftwareinc.com/stealth/builder-images/centos:8
+  script: [src/main/scripts/gitlab_ci_format]
+
+test-centos-8:
+  stage: stage-1
+  image: registry.stealthsoftwareinc.com/stealth/builder-images/centos:8
+  script: [src/main/scripts/gitlab_ci_test]
+
+test-ubuntu-20:
+  stage: stage-1
+  image: registry.stealthsoftwareinc.com/stealth/builder-images/ubuntu:20.04
+  script: [src/main/scripts/gitlab_ci_test]
+
+test-ubuntu-18:
+  stage: stage-1
+  image: registry.stealthsoftwareinc.com/stealth/builder-images/ubuntu:18.04
+  script: [src/main/scripts/gitlab_ci_test]

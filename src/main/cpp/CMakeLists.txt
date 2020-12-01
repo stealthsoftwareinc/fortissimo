@@ -1,0 +1,115 @@
+project(shared)
+
+include_directories(
+  ./
+  ../../../lib/include
+)
+
+link_directories(
+  ../../../lib/lib
+)
+
+add_library(fortissimo
+  ff/logging.cpp
+  ff/logging.h
+  ff/Message.h
+  ff/Message.t.h
+  ff/Actions.h
+  ff/PeerSet.h
+  ff/Util.h
+  ff/Util.cpp
+  ff/Fronctocol.h
+  ff/Fronctocol.t.h
+  ff/FronctocolHandler.h
+  ff/FronctocolHandler.t.h
+  ff/FronctocolsManager.h
+  ff/FronctocolsManager.t.h
+  ff/VectorPeerSet.h
+  ff/tester/runTests.h
+  ff/tester/runTests.t.h
+  ff/tester/Tester.h
+  ff/tester/Tester.t.h
+  ff/posixnet/posixnet.h
+  ff/posixnet/posixnet.t.h
+  ff/posixnet/posixnet_posix.h
+  ff/posixnet/posixnet_windows.h
+
+  mpc/simplePrime.h
+  mpc/simplePrime.t.h
+  mpc/templates.h
+  mpc/templates.cpp
+  mpc/Randomness.h
+  mpc/Randomness.t.h
+  mpc/Randomness.cpp
+  mpc/RandomnessDealer.h
+  mpc/RandomnessDealer.t.h
+  mpc/Batch.h
+  mpc/Batch.t.h
+  mpc/lagrange.h
+  mpc/lagrange.t.h
+  mpc/Multiply.h
+  mpc/Multiply.t.h
+  mpc/Multiply.cpp
+  mpc/Reveal.h
+  mpc/Reveal.t.h
+  mpc/UnboundedFaninOr.h
+  mpc/UnboundedFaninOr.t.h
+  mpc/PrefixOr.h
+  mpc/PrefixOr.t.h
+  mpc/Waksman.h
+  mpc/Waksman.t.h
+  mpc/Waksman.cpp
+  mpc/Compare.h
+  mpc/Compare.t.h
+  mpc/CompareDealer.h
+  mpc/CompareDealer.t.h
+  mpc/BitwiseCompare.h
+  mpc/BitwiseCompare.t.h
+  mpc/Quicksort.h
+  mpc/Quicksort.t.h
+  mpc/QuicksortDealer.h
+  mpc/QuicksortDealer.t.h
+  mpc/SISOSort.h
+  mpc/SISOSort.t.h
+  mpc/SISOSortDealer.h
+  mpc/SISOSortDealer.t.h
+  mpc/TypeCastBit.h
+  mpc/TypeCastBit.t.h
+  mpc/Divide.h
+  mpc/Divide.t.h
+  mpc/PosIntCompare.h
+  mpc/PosIntCompare.t.h
+  mpc/PosIntCompareDealer.h
+  mpc/PosIntCompareDealer.t.h
+  mpc/PrefixOrDealer.h
+  mpc/PrefixOrDealer.t.h
+  mpc/ObservationList.h
+  mpc/ObservationList.t.h
+  mpc/ModConvUp.h
+  mpc/ModConvUp.t.h
+  mpc/ModConvUpDealer.h
+  mpc/ModConvUpDealer.t.h
+  mpc/DivideDealer.h
+  mpc/DivideDealer.t.h
+  mpc/MatrixMult.h
+  mpc/MatrixMult.t.h
+  mpc/ModUtils.h
+  mpc/ModUtils.cpp
+  mpc/AbstractZipReduceFactory.h
+  mpc/ZipAdjacent.h
+  mpc/ZipAdjacent.t.h
+  mpc/ZipAdjacentDealer.h
+  mpc/ZipAdjacentDealer.t.h
+  mpc/ZipReduce.h
+  mpc/ZipReduce.t.h
+
+  mpc/simplePrime.h
+  mpc/simplePrime.t.h
+  mpc/simplePrime.cpp
+)
+
+target_link_libraries(fortissimo
+  ssl
+  crypto
+  sst
+)
